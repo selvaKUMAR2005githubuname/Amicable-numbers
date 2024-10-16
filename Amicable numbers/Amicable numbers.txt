@@ -1,0 +1,25 @@
+def sumof(n):
+    some=0
+    for i in range(1,n):
+        if n%i==0:
+            some+=i
+    return some
+        
+
+
+def is_amicable(a,b):
+    return  (sumof(a)==b) and ((sumof(b))==a) and a!=b
+        
+
+
+
+
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    you=0
+    for i in range(1,n+1):
+        for j in range(i+1,n+1):
+            if (is_amicable(i,j)):
+                you+=(i+j)
+    print(you)
